@@ -21,7 +21,7 @@
                            response.sendRedirect("Customer_interface.jsp");
 			}
 			else
-			{
+			{  
 				out.println("INVLAID NAME AND PASSWORD");
 			}
 			con.close();

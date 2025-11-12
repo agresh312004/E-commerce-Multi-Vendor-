@@ -8,10 +8,11 @@
     <title>Update Product</title>
 
     <style>
-        /* Body style */
+        /* ---------------------- BACKGROUND ---------------------- */
         body {
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #6dd5ed, #2193b0);
+            background: url('4aa8f45f74b347302309da315df7ce2d.jpg') no-repeat center center/cover,
+                        linear-gradient(135deg, #2193b0, #6dd5ed); /* Image + gradient */
             margin: 0;
             padding: 0;
             display: flex;
@@ -20,71 +21,85 @@
             height: 100vh;
         }
 
-        /* Form container */
+        /* ---------------------- FORM CONTAINER ---------------------- */
         .form-container {
-            background: #fff;
+            background: rgba(255, 255, 255, 0.25); /* Transparent white */
+            backdrop-filter: blur(10px); /* Frosted glass effect */
+            -webkit-backdrop-filter: blur(10px);
             padding: 30px 40px;
-            border-radius: 15px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
             width: 400px;
             display: flex;
             flex-direction: column;
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
-        /* Heading */
+        /* ---------------------- HEADING ---------------------- */
         h2 {
             text-align: center;
             margin-bottom: 25px;
-            color: #333;
+            color: #fff;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.3);
         }
 
-        /* Form labels */
+        /* ---------------------- LABELS ---------------------- */
         label {
             font-weight: bold;
             margin-bottom: 5px;
-            color: #555;
+            color: #f1f1f1;
             display: block;
         }
 
-        /* Inputs */
+        /* ---------------------- INPUTS ---------------------- */
         input[type="text"],
         input[type="number"],
         input[type="date"] {
             width: 100%;
             padding: 10px;
             margin-bottom: 15px;
-            border-radius: 8px;
-            border: 1px solid #ccc;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.4);
             font-size: 14px;
             box-sizing: border-box;
+            background: rgba(255, 255, 255, 0.6);
+            color: #333;
         }
 
-        /* Submit button */
+        input:focus {
+            outline: none;
+            border-color: #2193b0;
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        /* ---------------------- BUTTON ---------------------- */
         button {
             width: 100%;
             padding: 12px;
-            background-color: #2193b0;
+            background: linear-gradient(135deg, #2193b0, #6dd5ed);
             color: white;
             border: none;
             border-radius: 10px;
             font-size: 16px;
             cursor: pointer;
             transition: 0.3s;
+            font-weight: bold;
         }
 
         button:hover {
-            background-color: #6dd5ed;
+            background: linear-gradient(135deg, #6dd5ed, #2193b0);
             color: #000;
         }
 
-        /* Error message */
+        /* ---------------------- ERROR ---------------------- */
         .error {
-            color: red;
+            color: #ff6b6b;
             text-align: center;
             margin-bottom: 15px;
+            font-weight: bold;
         }
 
-        /* Responsive */
+        /* ---------------------- RESPONSIVE ---------------------- */
         @media (max-width: 450px) {
             .form-container {
                 width: 90%;
@@ -130,7 +145,7 @@ try {
     if (rs.next()) {
 %>
 
-    <h2>Update Product</h2>
+    <h2>Update Product 🛍️</h2>
     <form action="Update_Product_database.jsp" method="post">
         <input type="hidden" name="id" value="<%= id %>">
 

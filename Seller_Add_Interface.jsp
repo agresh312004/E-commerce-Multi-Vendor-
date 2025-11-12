@@ -28,8 +28,9 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: radial-gradient(circle at top left, #2e3192, #1bffff, #00c6ff, #0072ff);
-            background-size: 300% 300%;
+            background: url('4aa8f45f74b347302309da315df7ce2d.jpg') no-repeat center center/cover, 
+                        linear-gradient(135deg, #6dd5ed, #2193b0); /* Layering background image with gradient */
+            background-size: cover;
             animation: gradientShift 10s ease infinite;
             overflow: hidden;
         }
@@ -43,7 +44,7 @@
         /* ---------------------- FORM CONTAINER ---------------------- */
         .form-container {
             position: relative;
-            width: 430px;
+            width: 450px;
             padding: 40px;
             background: rgba(255, 255, 255, 0.12);
             border-radius: 25px;
@@ -181,7 +182,7 @@
         <div class="glow one"></div>
         <div class="glow two"></div>
 
-        <h2>Add New Item ? <%= ((String)session.getAttribute("Email")).replaceAll("@gmail.com","") %></h2>
+        <h2>Add New Item</h2>
 
         <form action="Seller_Add_Database" method="post" enctype="multipart/form-data">
             <div class="form-group">
